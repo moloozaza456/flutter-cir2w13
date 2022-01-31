@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppView extends StatelessWidget {
-  const AppView({Key? key}) :super (key: key);
+  const AppView({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,16 +32,45 @@ class AppView extends StatelessWidget {
           children: [
             DrawerHeader(
               // HEADER
-              child: Center(
-                child: Text(
-                  "Header",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
+              // child: Center(
+              //   child: Text(
+              //     "Header",
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.bold,
+              //         fontSize: 20),
+              //   ),
+              // ),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    // fit: BoxFit.fill,
+                image: AssetImage("images/cat2.png"),
+              )),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                    child: Center(child: Text("Home",style: TextStyle(color: Colors.white),)),
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple,
+                      borderRadius: BorderRadius.circular(30),
+
+                    ),
+                  ),
+                ],
+
               ),
-              decoration: BoxDecoration(color: Colors.purple),
             ),
             ListTile(
               onTap: () {
@@ -51,8 +80,7 @@ class AppView extends StatelessWidget {
                 Icons.account_circle,
                 color: Colors.purpleAccent,
               ),
-              title: Text("Menu-1",
-                  style: TextStyle(color: Colors.purpleAccent)),
+              title: Text("Menu-1", style: TextStyle(color: Colors.purple)),
             ),
             ListTile(
               onTap: () {
