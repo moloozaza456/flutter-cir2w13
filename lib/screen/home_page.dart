@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator/screen/app_view.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage ({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +10,11 @@ class ProfilePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My Profile Pages"),
+          title: Text("My Home Pages"),
           centerTitle: true,
         ),
         body: Center(
-          child: Text("Profile page"),
+          child: Text("Home page"),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {

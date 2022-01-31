@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navigator/screen/about.dart';
+import 'package:flutter_navigator/screen/contact.dart';
+import 'package:flutter_navigator/screen/home_page.dart';
+import 'package:flutter_navigator/screen/profile.dart';
 
 class AppView extends StatelessWidget {
   const AppView({Key? key}) : super(key: key);
@@ -44,21 +48,24 @@ class AppView extends StatelessWidget {
               // ),
               decoration: BoxDecoration(
                   image: DecorationImage(
-                    // fit: BoxFit.fill,
+                // fit: BoxFit.fill,
                 image: AssetImage("images/cat2.png"),
               )),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 50,
-                    width: 50,
+                    height: 60,
+                    width: 60,
                     decoration: BoxDecoration(
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(30),
-
                     ),
-                    child: Center(child: Text("Home",style: TextStyle(color: Colors.white),)),
+                    child: Center(
+                        child: Text(
+                      "FUBUKI",
+                      style: TextStyle(color: Colors.white),
+                    )),
                   ),
                   Container(
                     height: 20,
@@ -66,55 +73,73 @@ class AppView extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.deepPurple,
                       borderRadius: BorderRadius.circular(30),
-
                     ),
                   ),
                 ],
-
               ),
             ),
             ListTile(
               onTap: () {
-                print("Home");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                ); // link href
+              },
+              leading: Icon(
+                Icons.home,
+                color: Colors.purple,
+              ),
+              title: Text("Home", style: TextStyle(color: Colors.purpleAccent)),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutPage()),
+                ); // link href
               },
               leading: Icon(
                 Icons.account_circle,
-                color: Colors.purpleAccent,
+                color: Colors.purple,
               ),
-              title: Text("Menu-1", style: TextStyle(color: Colors.purple)),
+              title: Text("About"),
             ),
             ListTile(
               onTap: () {
-                print("Home");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                ); // link href
               },
               leading: Icon(
                 Icons.label,
-                color: Colors.purpleAccent,
+                color: Colors.purple,
               ),
-              title: Text("Menu-2"),
+              title: Text("Profile"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ContactPage()),
+                ); // link href
+              },
               leading: Icon(
                 Icons.label,
-                color: Colors.purpleAccent,
+                color: Colors.purple,
               ),
-              title: Text("Menu-3"),
-            ),
-            ListTile(
-              leading: Icon(
-                Icons.label,
-                color: Colors.purpleAccent,
-              ),
-              title: Text("Menu-4"),
+              title: Text("Contact"),
             ),
             SizedBox(
               height: 5,
             ),
-            Divider(color: Colors.grey,),
+            Divider(
+              color: Colors.grey,
+            ),
             ListTile(
               leading: Icon(
                 Icons.power_settings_new,
-                color: Colors.purpleAccent,
+                color: Colors.purple,
               ),
               title: Text("Exit Program"),
             ),
