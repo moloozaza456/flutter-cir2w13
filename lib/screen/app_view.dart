@@ -27,6 +27,7 @@ class AppView extends StatelessWidget {
         child: Icon(Icons.home),
       ),
       drawer: Drawer(
+        // backgroundColor: Colors.deepPurple,
         // Navbar
         child: ListView(
           children: [
@@ -47,7 +48,7 @@ class AppView extends StatelessWidget {
                 image: AssetImage("images/cat2.png"),
               )),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     height: 50,
@@ -109,6 +110,7 @@ class AppView extends StatelessWidget {
             SizedBox(
               height: 5,
             ),
+            Divider(color: Colors.grey,),
             ListTile(
               leading: Icon(
                 Icons.power_settings_new,
